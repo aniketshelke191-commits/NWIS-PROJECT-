@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NWIS - Near Well Intelligent System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">🛢️ <span>NWIS</span></div>
+
+        <div class="header-right">
+          <div id="status" class="status online">🟢 Online</div>
+          <div class="profile">👷 Engineer</div>
+        </div>
+      </header>
+
+      <div class="main">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <h3>Oil India</h3>
+
+          <ul class="menu">
+            <li class="active" data-page="dashboard">🏠 Dashboard</li>
+            <li data-page="wells">🛢 Wells</li>
+            <li data-page="ai">🤖 AI Assistant</li>
+            <li data-page="map">🗺 GIS Map</li>
+            <li data-page="weather">🌦 Weather</li>
+            <li data-page="upload">📤 Upload Well</li>
+            <li data-page="analytics">📊 Analytics</li>
+            <li data-page="profile">👤 Profile</li>
+          </ul>
+
+          <button id="toggleOffline" class="offline-btn">Offline Mode</button>
+        </aside>
+
+        <!-- Pages -->
+        <section class="content">
+          <!-- Dashboard -->
+          <div id="dashboard" class="page active-page">
+            <div class="top">
+              <div>
+                <h2>Good Morning 👋</h2>
+                <p>Well BH-27 • Oil India Limited</p>
+              </div>
+
+              <div class="weather-box">🌦 28°C</div>
+            </div>
+
+            <div class="cards">
+              <div class="card">
+                <p>Current Depth</p>
+                <h2>2480 m</h2>
+              </div>
+
+              <div class="card danger">
+                <p>Risk Score</p>
+                <h2>72%</h2>
+              </div>
+
+              <div class="card">
+                <p>Nearby Wells</p>
+                <h2>18</h2>
+              </div>
+
+              <div class="card">
+                <p>Weather</p>
+                <h2>Rain</h2>
+              </div>
+            </div>
+
+            <div class="panel">
+              <h3>Depth Progress</h3>
+
+              <svg viewBox="0 0 500 200">
+                <line x1="40" y1="20" x2="40" y2="160" stroke="#ccc" />
+                <line x1="40" y1="160" x2="460" y2="160" stroke="#ccc" />
+
+                <polyline
+                  fill="none"
+                  stroke="#0b5ed7"
+                  stroke-width="4"
+                  points="40,150 100,135 160,115 220,90 280,70 340,50 400,30 450,20"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Wells -->
+          <div id="wells" class="page">
+            <h2>Historical Wells</h2>
+
+            <div class="well-card">
+              <h3>Well A12</h3>
+              <p>Depth : 2478 m</p>
+              <p>Incident : Mud Loss</p>
+              <span class="badge">91% Similar</span>
+            </div>
+
+            <div class="well-card">
+              <h3>Well B09</h3>
+              <p>Depth : 2510 m</p>
+              <p>Incident : Torque Spike</p>
+            </div>
+          </div>
+
+          <!-- AI -->
+          <div id="ai" class="page">
+            <h2>NWIS AI Assistant</h2>
+
+            <div id="chat" class="chat-box">
+              <div class="bot">
+                Hello Engineer 👋 <br />
+                Ask about historical drilling incidents.
+              </div>
+            </div>
+
+            <div class="chat-input">
+              <input id="question" placeholder="Ask AI..." />
+              <button id="send">Send</button>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div id="map" class="page">
+            <h2>GIS Nearby Well Explorer</h2>
+
+            <div class="map-box">
+              <div class="pin red"></div>
+              <div class="pin green"></div>
+              <div class="pin yellow"></div>
+              <p>Current Well Radius : 5 km</p>
+            </div>
+          </div>
+
+          <!-- Weather -->
+          <div id="weather" class="page">
+            <h2>7 Day Forecast</h2>
+
+            <div class="forecast">
+              <div>🌧 Mon<br />28°</div>
+              <div>⛅ Tue<br />30°</div>
+              <div>☀ Wed<br />31°</div>
+              <div>🌩 Thu<br />27°</div>
+            </div>
+          </div>
+
+          <!-- Upload -->
+          <div id="upload" class="page">
+            <h2>Upload New Well</h2>
+
+            <form id="wellForm">
+              <input id="name" placeholder="Well Name" required />
+
+              <input id="depth" placeholder="Depth" required />
+
+              <input id="formation" placeholder="Formation" required />
+
+              <textarea id="note" placeholder="Observations"></textarea>
+
+              <button type="submit">Store in AI Database</button>
+            </form>
+
+            <p id="success"></p>
+          </div>
+
+          <!-- Analytics -->
+          <div id="analytics" class="page">
+            <h2>Risk Analytics</h2>
+
+            <div class="cards">
+              <div class="card">
+                <p>Mud Loss</p>
+                <h2>42%</h2>
+              </div>
+
+              <div class="card">
+                <p>Pressure</p>
+                <h2>1800 psi</h2>
+              </div>
+
+              <div class="card">
+                <p>Torque</p>
+                <h2>68 kN</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile -->
+          <div id="profile" class="page">
+            <h2>Engineer Profile</h2>
+
+            <div class="profile-card">
+              <h3>Aniket Shelke</h3>
+              <p>Drilling Engineer</p>
+              <p>Organization : Oil India Ltd.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
